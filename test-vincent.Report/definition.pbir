@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
   "version": "4.0",
   "datasetReference": {
-    "byPath": {
-      "path": "../test-vincent.SemanticModel"
+    "byConnection": {
+      "connectionString": "Data Source=\"powerbi://api.powerbi.com/v1.0/myorg/Logistic Network Optimization\";initial catalog=sm_dataset_outbound;access mode=readonly;integrated security=ClaimsToken;semanticmodelid=71e99ed0-444b-4dab-804b-84cbf4371e38"
     }
   }
 }
