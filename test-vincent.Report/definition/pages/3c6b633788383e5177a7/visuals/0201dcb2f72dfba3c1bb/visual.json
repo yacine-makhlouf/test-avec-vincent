@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "0201dcb2f72dfba3c1bb",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 719.92912744067382,
+    "width": 280.61753623359596
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ds_store_list"
+                    }
+                  },
+                  "Property": "delivery_zone"
+                }
+              },
+              "queryRef": "ds_store_list.delivery_zone",
+              "nativeQueryRef": "delivery_zone",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ds_store_list"
+                        }
+                      },
+                      "Property": "store"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(ds_store_list.store)",
+              "nativeQueryRef": "Nombre de store"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "34a79c6dae34ef90fd14",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ds_store_list"
+              }
+            },
+            "Property": "delivery_zone"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0863866c8a44d6b9459f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ds_store_list"
+                  }
+                },
+                "Property": "store"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
