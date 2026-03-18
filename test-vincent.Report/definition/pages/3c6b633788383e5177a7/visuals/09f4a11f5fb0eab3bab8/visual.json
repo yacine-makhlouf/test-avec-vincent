@@ -1,0 +1,121 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "09f4a11f5fb0eab3bab8",
+  "position": {
+    "x": 760,
+    "y": 200,
+    "z": 0,
+    "height": 384,
+    "width": 496
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ds_carrier_performance"
+                    }
+                  },
+                  "Property": "article"
+                }
+              },
+              "queryRef": "ds_carrier_performance.article",
+              "nativeQueryRef": "article",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ds_carrier_performance"
+                        }
+                      },
+                      "Property": "cc_PA_carrierbacklog"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(ds_carrier_performance.cc_PA_carrierbacklog)",
+              "nativeQueryRef": "Somme de cc_PA_carrierbacklog"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "ds_carrier_performance"
+                      }
+                    },
+                    "Property": "cc_PA_carrierbacklog"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bd60d0fa1b5709f0d626",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ds_carrier_performance"
+              }
+            },
+            "Property": "article"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "24abb3a3ab31dbe935e4",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ds_carrier_performance"
+                  }
+                },
+                "Property": "cc_PA_carrierbacklog"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
